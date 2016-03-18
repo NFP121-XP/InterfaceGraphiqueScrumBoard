@@ -1,6 +1,5 @@
 package fr.cnam.nfp121.xavier.ScrumBoard.gui;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -8,14 +7,10 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane; //Boite de dialogue
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.border.LineBorder;
 
 
 public class Fenetre extends JFrame {
@@ -67,21 +62,35 @@ public class Fenetre extends JFrame {
    
     this.menuBar.add(aPropos);
     
-    //Action quitter
+    //On définit l'action lorsque l'on clic sur quitter
     quitter.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent arg0) {
         System.exit(0);
       }        
     });
     
-    //Action Ajouter Membre
+    //On définit l'action lorsque l'on clic sur Ajouter Membre
     ajoutMembre.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent arg0) {
     		AjoutMembre ajout1 = new AjoutMembre(null, "Ajouter un nouveau membre", true);
     	}
     });
     
-    //APROPOS
+//    //On définit l'action lorsque l'on clic sur  Ajouter Tâches
+    NouvFonctionnalite.addActionListener(new ActionListener(){
+    	public void actionPerformed(ActionEvent arg0) {
+    		AjoutFonctionnalite ajout1 = new AjoutFonctionnalite(null, "Modification de la tâche", true);
+    	}
+    });
+    
+//    String TableauTache[] = {"NouvFonctionnalite","NouvBug"};
+////    for (int a=0; a>3; a++){
+//    TableauTache[0].addActionListener(new ActionListener(){
+//    	public void actionPerformed(ActionEvent arg0) {
+//    		AjoutMembre ajout1 = new AjoutMembre(null, "Ajouter un nouveau membre", true);}
+//    });
+////    }
+    //On définit l'action lorsque l'on clic sur APROPOS
       aPropos.addMouseListener(new MouseAdapter(){
         public void mouseClicked(MouseEvent arg0) {
           JOptionPane jop = new JOptionPane();
@@ -99,6 +108,7 @@ public class Fenetre extends JFrame {
       
       //Appel à ma class PostIt avant les colones pour avoir les PostIt dessus.
       PostIt postIt1 = new PostIt(0, 0, "Réussir NFP121", 0);
+      //postIt1.setDragEnabled(true);
       getContentPane().add(postIt1);
       PostIt postIt2 = new PostIt(0, 0, "Codage Java", 400);
       getContentPane().add(postIt2);

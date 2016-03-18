@@ -1,8 +1,8 @@
 package fr.cnam.nfp121.xavier.ScrumBoard.gui;
 
 import java.awt.Color;
-import java.awt.Graphics;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
@@ -13,6 +13,7 @@ public class PostIt extends JPanel{
 	private String TextPostIt;
 	private JLabel nomTache, srcLib, src;
 	private JLabel label = new JLabel();
+	JLabel dropLabel;
 	  
 	public PostIt(int x, int y, String TextPostIt,int Appartenance) {
 	
@@ -24,6 +25,7 @@ public class PostIt extends JPanel{
 		this.Appartenance = Appartenance;
 		// Appel de ma méthode
 		disposerPostIt(TextPostIt, Appartenance);
+	//	PostIt.setDropTarget(true);
 	}
 
 	private void disposerPostIt(String TexPostIt, int Appartenance)
@@ -43,6 +45,7 @@ public class PostIt extends JPanel{
 		this.setBounds(Appartenance+25, y+50, 350, 100);			//position et taille
 		this.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 	    label.setText(TextPostIt);
+	   // label.setDragEnable(true);
 	    this.add(label);
 	}
 

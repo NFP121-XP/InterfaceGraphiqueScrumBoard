@@ -4,8 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -75,7 +75,7 @@ public class AjoutMembre extends JDialog {
     Ligne1.add(nomLabel);	//affichage texte
     Ligne1.add(nom);		//Case de texte
     content.add(Ligne1);	//appartenant à la ligne1
-    
+
     //Rentrer Prenom
     prenom = new JTextField();
     prenom.setPreferredSize(new Dimension(100, 25));
@@ -101,13 +101,6 @@ public class AjoutMembre extends JDialog {
     Ligne3.add(nom);		
     content.add(Ligne3);
     
-    //Nombre de tâche
-    nom = new JTextField();
-    nom.setPreferredSize(new Dimension(110, 25));
-    nomLabel = new JLabel("Nombre de tâche confiées :");
-    Ligne4.add(nomLabel);
-    Ligne4.add(nom);		
-    content.add(Ligne4);
     
 //    Mise en place des bouttons
     JPanel control = new JPanel();

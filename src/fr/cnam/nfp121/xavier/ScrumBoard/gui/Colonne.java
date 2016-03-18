@@ -24,9 +24,10 @@ public class Colonne extends JPanel {
 		disposerColonne(Titre);
 	}
 
+	//Méthode permetant de créer des cadres
 	private void disposerColonne(String Titre)
 	{
-		this.setBackground(Color.CYAN);
+		this.setBackground(Color.WHITE);
 		this.setBounds(x, y, largeurColonne, hauteurColonne);			//position et taille
 		this.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 	    label.setText(Titre);
